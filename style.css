@@ -3,9 +3,8 @@
 *{
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 1;
     font-size: 14px;
-    font-family: source;
     /* border: solid 1px red; */
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -26,23 +25,28 @@ h2{
 }
 
 header{
+
+    height: 80px;
     display:grid;
-    grid-template-columns: 1em 3em 2fr 1fr 1em;
+    grid-template-columns: repeat(9 1fr) ;
     align-items: center;
-    height: 60px;
-    /* width: 415px; */
 }
 
 #logo{
-    grid-column: 2/3;
-    width: 100%;
-    height: 43px;
-    object-fit: cover;
+    width:60px;
+    height: 60px;
     border-radius: 50%;
+    grid-column: 1/2;
+    justify-self: start;
 }
-    
+.title{
+    grid-column: 2/3;
+    justify-self: start;
 
-
+}
+ .home-link{ grid-column: 5/7;}
+ .about-me-link{ grid-column: 7/9;}
+ 
 
 a{
     color: black;
@@ -52,34 +56,45 @@ header a{
     text-decoration: none;
     color: black;
     margin: 0 0.3em;
+    text-transform: uppercase;
 }
 header a:hover{
     text-decoration: underline;
 }
 
+
+.container{
+    width: 100%;
+    height: 430vh;
+    display: grid;
+    grid-template-rows: repeat(7 500px) 20px;
+    grid-template-columns: 1em 100% 1em;
+    grid-gap: 1em;
+    /* padding: 1em; */
+
+}
+
 .main-img{
     width: 100%;
-    height: 30vh;
     background: url(/images/blockchain.avif) no-repeat center;
-    padding:1em;
+    padding:2em;
+    grid-column: 1/-1;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     color: antiquewhite;
 }
 
-.container{
-    height: 400vh;
-    display: grid;
-    grid-template-columns: repeat(6 1fr);
-    grid-template-rows: repeat(6 500px);
-    grid-gap: 1em;
-    padding: 1em;
-
+.element,
+.main-img{
+    grid-row: span 2;
+    height: 100%;
+    max-height: 300px;
 }
+
 .element{
-    width: 100%;
-    height: 300px;
+    /* width: 100%; */
+    grid-column: 2/-2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -89,8 +104,8 @@ header a:hover{
 
 .image{
     width: 100%;
-    min-height: 260px;
-    max-height: 200px;
+    height:70%;
+    max-height: 400px;
     object-fit: cover;
     display: block;
     margin: 0 auto;
@@ -99,6 +114,8 @@ header a:hover{
 .view-more{
     text-align: center;
     margin: 1em 0;
+    grid-row: 15/16;
+    grid-column: 2/-2;
 }
 
 footer{
