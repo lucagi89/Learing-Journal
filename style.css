@@ -25,27 +25,29 @@ h2{
 }
 
 header{
-
+    width: 100vw;
     height: 80px;
-    display:grid;
-    grid-template-columns: repeat(9 1fr) ;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 2em;
 }
 
 #logo{
-    width:60px;
     height: 60px;
+    width: 60px;
+
     border-radius: 50%;
-    grid-column: 1/2;
-    justify-self: start;
+    border: solid;
+   
 }
 .title{
-    grid-column: 2/3;
-    justify-self: start;
+  width: 65%;
+  border: solid;
 
 }
- .home-link{ grid-column: 5/7;}
- .about-me-link{ grid-column: 7/9;}
+ .home-link{ border: solid;}
+ .about-me-link{ border: solid;}
  
 
 a{
@@ -53,6 +55,7 @@ a{
 }
 
 header a{
+    margin-left: 20%;
     text-decoration: none;
     color: black;
     margin: 0 0.3em;
